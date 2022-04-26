@@ -8,7 +8,12 @@ class TorosyVacas {
     }
 
     adivinar(intento){
-        return "GANASTE";
+        if(intento == this.codigoSecreto){
+            return "GANASTE";
+        }
+        else{
+            return "NO";
+        }
     }
 }
 
