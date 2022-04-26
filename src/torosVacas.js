@@ -11,7 +11,10 @@ class TorosyVacas {
         if(intento == this.codigoSecreto){
             return "GANASTE";
         }
-        else if(this.codigoSecreto.search(intento[0]) > -1){
+        else if(this.codigoSecreto.includes(intento[0]) && this.codigoSecreto.includes(intento[1])){
+            return "**";
+        }
+        else if(this.codigoSecreto.includes(intento[0])){
             return "*";
         }
         return "NO";
