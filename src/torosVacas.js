@@ -27,6 +27,7 @@ class TorosyVacas {
     }
 
     verificarToros(posicion, intento){
+
         let caracter = "";
         if(intento[posicion] == this.codigoSecreto[posicion]){
             caracter = "!";
