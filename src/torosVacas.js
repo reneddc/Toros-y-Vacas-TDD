@@ -9,21 +9,37 @@ class TorosyVacas {
 
     adivinar(intento){
         let respuesta = "";
+        let caracterToro = "";
+        let caracterVaca = "";
         if(intento == this.codigoSecreto){
             return "GANASTE";
         }
         for(var i = 0; i < intento.length; i++){
-            if(intento[i] == this.codigoSecreto[i]){
-                respuesta += "!";
-            }
-            else if(this.codigoSecreto.includes(intento[i])){
-                respuesta += "*";
-            }
+            caracterToro = this.verificarToros(i, intento);
+            respuesta += caracterToro;
+            caracterVaca = this.verificarVacas(i, intento, caracterToro);
+            respuesta += caracterVaca;
         }
         if(respuesta == ""){
             respuesta = "NO";
         }
         return respuesta;
+    }
+
+    verificarToros(posicion, intento){
+        let caracter = "";
+        if(intento[posicion] == this.codigoSecreto[posicion]){
+            caracter = "!";
+        }
+        return caracter;
+    }
+
+    verificarVacas(posicion, intento, caracterToro){
+        let caracter = "";
+        if(caracterToro == "" && this.codigoSecreto.includes(intento[posicion])){
+            caracter = "*";
+        }
+        return caracter;
     }
 
 }
