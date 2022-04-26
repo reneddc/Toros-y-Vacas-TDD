@@ -8,16 +8,21 @@ class TorosyVacas {
     }
 
     adivinar(intento){
+        let respuesta = "";
         if(intento == this.codigoSecreto){
             return "GANASTE";
         }
-        else if(this.codigoSecreto.includes(intento[0]) && this.codigoSecreto.includes(intento[1])){
-            return "**";
+        else{
+            for(var i = 0; i < intento.length; i++){
+                if(this.codigoSecreto.includes(intento[i])){
+                    respuesta += "*";
+                }
+            }
+            if(respuesta == ""){
+                respuesta = "NO";
+            }
         }
-        else if(this.codigoSecreto.includes(intento[0])){
-            return "*";
-        }
-        return "NO";
+        return respuesta;
     }
 }
 
