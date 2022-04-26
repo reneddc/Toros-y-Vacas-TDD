@@ -31,6 +31,16 @@ describe("Toros y Vacas", () => {
     expect(torosVacas.adivinar("1")).toEqual("!");
   });
 
+  it("Si el código secreto es <123> y el intento es <143> debería retornar <!!>", () => {
+    torosVacas.definirCodigoSecreto("123");
+    expect(torosVacas.adivinar("143")).toEqual("!!");
+  });
+
+  it("Si el código secreto es <423> y el intento es <143> debería retornar <*!>", () => {
+    torosVacas.definirCodigoSecreto("423");
+    expect(torosVacas.adivinar("143")).toEqual("*!");
+  });
+
 });
 
 
