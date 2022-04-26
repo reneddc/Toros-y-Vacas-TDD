@@ -3,6 +3,7 @@ import TorosyVacas from "./torosVacas"
 describe("Toros y Vacas", () => {
   let torosVacas = new TorosyVacas("");
 
+  //HISTORIA DE USUARIO 1
   it("Debería responder <GANASTE> si se adivina el código secreto", () => {
     torosVacas.definirCodigoSecreto("3");
     expect(torosVacas.adivinar("3")).toEqual("GANASTE");
@@ -11,6 +12,12 @@ describe("Toros y Vacas", () => {
   it("Debería responder <NO> si no se adivina el código secreto", () => {
     torosVacas.definirCodigoSecreto("3");
     expect(torosVacas.adivinar("4")).toEqual("NO");
+  });
+
+  //HISTORIA DE USUARIO 2
+  it("Si el código secreto es <12> y el intento es <2> debería retornar <*>", () => {
+    torosVacas.definirCodigoSecreto("12");
+    expect(torosVacas.adivinar("2")).toEqual("*");
   });
 });
 
