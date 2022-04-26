@@ -12,18 +12,20 @@ class TorosyVacas {
         if(intento == this.codigoSecreto){
             return "GANASTE";
         }
-        else{
-            for(var i = 0; i < intento.length; i++){
-                if(this.codigoSecreto.includes(intento[i])){
-                    respuesta += "*";
-                }
+        for(var i = 0; i < intento.length; i++){
+            if(intento[i] == this.codigoSecreto[i]){
+                respuesta += "!";
             }
-            if(respuesta == ""){
-                respuesta = "NO";
+            else if(this.codigoSecreto.includes(intento[i])){
+                respuesta += "*";
             }
+        }
+        if(respuesta == ""){
+            respuesta = "NO";
         }
         return respuesta;
     }
+
 }
 
 export default TorosyVacas;
