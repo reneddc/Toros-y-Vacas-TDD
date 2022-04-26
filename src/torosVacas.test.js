@@ -11,18 +11,18 @@ describe("Toros y Vacas", () => {
 
   it("Debería responder <NO> si no se adivina el código secreto", () => {
     torosVacas.definirCodigoSecreto("3");
-    expect(torosVacas.adivinar("4")).toEqual("NO");
+    expect(torosVacas.adivinar("8")).toEqual("NO");
   });
 
   //HISTORIA DE USUARIO 2
-  it("Si el código secreto es <12> y el intento es <2> debería retornar <*>", () => {
-    torosVacas.definirCodigoSecreto("12");
-    expect(torosVacas.adivinar("2")).toEqual("*");
+  it("Si el código secreto es <19> y el intento es <9> debería retornar <*>", () => {
+    torosVacas.definirCodigoSecreto("19");
+    expect(torosVacas.adivinar("9")).toEqual("*");
   });
 
-  it("Si el código secreto es <12> y el intento es <21> debería retornar <**>", () => {
-    torosVacas.definirCodigoSecreto("12");
-    expect(torosVacas.adivinar("21")).toEqual("**");
+  it("Si el código secreto es <19> y el intento es <91> debería retornar <**>", () => {
+    torosVacas.definirCodigoSecreto("19");
+    expect(torosVacas.adivinar("91")).toEqual("**");
   });
 
   //HISTORIA DE USUARIO 3
@@ -44,7 +44,7 @@ describe("Toros y Vacas", () => {
   //HISTORIA DE USUARIO 4
   it("Si el código secreto es <12> y el intento es <3> debería retornar <#>", () => {
     torosVacas.definirCodigoSecreto("12");
-    expect(torosVacas.adivinar("3")).toEqual("#");
+    expect(torosVacas.adivinar("0")).toEqual("#");
   });
 
 });
