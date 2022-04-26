@@ -11,14 +11,13 @@ const intentoInput = document.querySelector("#intento");
 //Resultados
 const respuestaDiv = document.querySelector("#respuesta-div");
 
-let torosVacas = "";
+let torosVacas = new TorosyVacas("");
 
 codigoForm.addEventListener("submit", (event) => {
   event.preventDefault();
 
   const codigoSecreto = codigoInput.value;
-  torosVacas = new TorosyVacas();
-
+  torosVacas.definirCodigoSecreto(codigoSecreto);
 });
 
 intentoForm.addEventListener("submit", (event) => {
